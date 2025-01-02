@@ -1,0 +1,55 @@
+@startuml
+actor User
+participant ShareScreen
+participant TracksContext
+participant tracksApi
+participant "Server (API)" as API
+
+User -> ShareScreen : Open Share Screen
+activate ShareScreen
+
+ShareScreen -> tracksApi : getUnsharedTracksApi.request(userInfo)
+activate tracksApi
+tracksApi -> API : GET /unsharedTracks (userInfo)
+activate API
+API --> tracksApi : List of unshared tracks
+deactivate API
+tracksApi --> ShareScreen : List of unshared tracks
+deactivate tracksApi
+
+User -> ShareScreen : Click Share Button on a Track
+ShareScreen -> tracksApi : getTrackDetailsApi.request(track.id)
+activate tracksApi
+tracksApi -> API : GET /trackDetails (track.id)
+activate API
+API --> tracksApi : Track details
+deactivate API
+tracksApi --> ShareScreen : Track details
+deactivate tracksApi
+
+User -> ShareScreen : Fill in details and submit
+ShareScreen -> TracksContext : toggleShareStatus(selectedTrack, shared: true)
+activate TracksContext
+TracksContext -> tracksApi : toggleShareStatus API call
+activate tracksApi
+tracksApi -> API : PUT /updateTrackStatus (track.id, shared: true)
+activate API
+API --> tracksApi : Confirmation of status update
+deactivate API
+tracksApi --> TracksContext : Confirmation of status update
+deactivate tracksApi
+TracksContext --> ShareScreen : Confirmation of status update
+deactivate TracksContext
+
+ShareScreen -> tracksApi : getUnsharedTracksApi.request(userInfo) (Refresh list)
+activate tracksApi
+tracksApi -> API : GET /unsharedTracks (userInfo)
+activate API
+API --> tracksApi : Updated list of unshared tracks
+deactivate API
+tracksApi --> ShareScreen : Updated list of unshared tracks
+deactivate tracksApi
+
+User <-- ShareScreen : Updated UI (track shared)
+deactivate ShareScreen
+@enduml

@@ -1,0 +1,77 @@
+@startuml
+left to right direction
+actor User
+package "Cycling App" {
+
+  User --> (Sign Up)
+  User --> (Log In)
+
+  package "Main Screen" {
+
+    package "Statistics" {
+      (View Statistics) --> (Filter By Date): Filter
+    }
+    (Statistics) --> (View Statistics)
+
+    package "History" {
+      (View History) --> (Track Details) : View
+      (View History) --> (Delete Track) : Delete
+      (Track Details) --> (Edit Markers) : Edit
+      (Edit Markers) --> (Add)
+      (Edit Markers) --> (Update)
+      (Edit Markers) --> (Delete)
+    }
+    (History) --> (View History)
+
+    package "Activity"{
+
+        package "Display"{
+            (Speed Meter)
+            (Start Tracking) --> (Pause Tracking) : Pause
+            (Stop Tracking) --> (Save Track) : Save track
+            (Stop Tracking) --> (Start Tracking) : Start
+            (Start Tracking) --> (Stop Tracking) : Stop
+        }
+        (Display) --> (Speed Meter)
+        (Display) --> (Start Tracking)
+        (Display) --> (Save Track)
+        package "Live Stats"{
+            (View Live Statistics)
+        }
+        (Live Stats) --> (View Live Statistics)
+        package "Map"{
+            (Display map)
+
+            (Pause Tracking) --> (Edit Markers ) : Edit
+            (Edit Markers ) --> (Add )
+            (Edit Markers ) --> (Update )
+            (Edit Markers ) --> (Delete )
+        }
+        (Map) --> (Display map)
+    }
+    (Activity) --> (Display)
+    (Activity) --> (Live Stats)
+    (Activity) --> (Map)
+
+    package "Share" {
+      (Share Track)
+    }
+
+
+    package "Account" {
+      (Manage Account Data)
+      (Log Out)
+    }
+
+  (Log In) --> (Main Screen) : "Access after login"
+  (Sign Up) --> (Main Screen) : "Access after sign up"
+
+  (Main Screen) --> (Statistics)
+  (Main Screen) --> (History)
+  (Main Screen) --> (Activity)
+  (Main Screen) --> (Share)
+  (Main Screen) --> (Account)
+
+}
+@enduml
+

@@ -1,0 +1,22 @@
+@startuml
+actor User
+participant "Mobile App" as App
+participant Backend
+participant "Database" as DB
+
+User -> App : Open the application
+User -> App : Enter email and password
+App -> Backend : Send login credentials
+Backend -> DB : Verify credentials
+alt Credentials are correct
+    DB -> Backend : Return success
+    Backend -> App : Send authentication success
+    App -> User : Proceed to main screen
+else Credentials are incorrect
+    DB -> Backend : Return failure
+    Backend -> App : Send authentication failure
+    App -> User : Display login failure message
+end
+@enduml
+
+

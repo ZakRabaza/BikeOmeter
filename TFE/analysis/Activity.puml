@@ -1,0 +1,44 @@
+@startuml
+actor User
+participant "Mobile App" as App
+participant "Local Storage" as Storage
+participant Backend
+participant "Database" as DB
+
+User -> App : Press "Start" button
+App -> App : Start GPS tracking
+App -> Storage : Save GPS data locally
+
+alt Tracking is in progress
+    User -> App : Press "Pause" button
+    App -> App : Pause GPS tracking
+    App -> User : Allow adding/editing/removing markers
+
+    alt User selects "Resume"
+        User -> App : Press "Resume" button
+        App -> App : Resume GPS tracking
+    else User selects "Stop"
+        User -> App : Press "Stop" button
+        App -> App : Stop GPS tracking
+        App -> Storage : Finalize and save tracking data
+        App -> User : Display option to add track to saved routes
+    end
+else User selects "Stop"
+    User -> App : Press "Stop" button
+    App -> App : Stop GPS tracking
+    App -> Storage : Finalize and save tracking data
+    App -> User : Display option to add track to saved routes
+end
+
+User -> App : Press "Add Track" button
+App -> Storage : Retrieve local tracking data
+App -> Backend : Send tracking data to backend
+Backend -> DB : Save tracking data in database
+Backend -> App : Confirm track saved
+
+alt Next time "Start" is pressed
+    User -> App : Press "Start" button
+    App -> Storage : Clear previous local tracking data
+    App -> App : Start GPS tracking
+end
+@enduml

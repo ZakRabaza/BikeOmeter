@@ -1,0 +1,61 @@
+@startuml
+start
+
+:User opens the app;
+if (Is the user logged in?) then (yes)
+    :Go to Main Screen;
+else (no)
+    :Show Login Screen;
+    :User logs in or signs up;
+    :Go to Main Screen;
+endif
+
+:Activity default tab;
+:User starts a new track;
+
+repeat
+    :Track user's activity (GPS data);
+    if (User pauses the track?) then (yes)
+        :Pause tracking;
+        :Allow user to add/edit markers;
+    endif
+repeat while (User continues the activity)
+
+:User stops the track;
+:Save track data locally;
+
+if (User wants to save track to backend?) then (yes)
+    :Upload track to server;
+else (no)
+    :Keep track data locally;
+endif
+
+:User selects another tab (Statistics, History, Share, Account);
+if (User selects History?) then (yes)
+    :List all tracks;
+    :User views details of a track;
+    if (User wants to edit markers?) then (yes)
+        :Allow user to add/edit markers;
+    endif
+    if (User wants to delete a track?) then (yes)
+        :Delete the track;
+    endif
+else if (User selects Statistics?) then (yes)
+    :Show overall statistics;
+    :Allow filtering by date;
+else if (User selects Share?) then (yes)
+    :Allow user to share a track;
+else if (User selects Account?) then (yes)
+    :Show account settings;
+    if (User wants to edit profile?) then (yes)
+        :Allow editing of user information;
+    endif
+    if (User wants to log out?) then (yes)
+        :Log out the user;
+        :Go back to Login Screen;
+    endif
+endif
+
+stop
+@enduml
+

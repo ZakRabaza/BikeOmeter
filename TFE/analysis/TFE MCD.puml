@@ -1,0 +1,78 @@
+@startuml
+
+entity User {
+    * id : Integer
+    * name : String
+    * email : String
+    * password : String
+    * birthDay : LocalDate
+    * role : UserRole
+    * gender : UserGender
+    * height : Double
+    * weight : Double
+    * locked : Boolean
+    * enable : Boolean
+}
+
+entity Track {
+    * id : Integer
+    * date : LocalDateTime
+    * totalTime : LocalTime
+    * distance : Double
+    * calories : Double
+    * averageSpeed : Double
+    * maxSpeed : Double
+    * pauseTime : LocalTime
+    * activeTime : LocalTime
+    * startTime : LocalTime
+    * finishTime : LocalTime
+    * maxAltitude : Double
+    * minAltitude : Double
+    * startAltitude : Double
+    * finishAltitude : Double
+    * shared : Boolean
+    * bikeType : String
+    * routeType : String
+    * location : String
+    * comment : String
+}
+
+entity TrackMap {
+    * id : Integer
+}
+
+entity Coordinate {
+    * id : Integer
+    * latitude : Double
+    * longitude : Double
+    * timestamp : Long
+}
+
+entity Marker {
+    * id : Integer
+    * key : String
+    * name : String
+    * comment : String
+    * latitude : Double
+    * longitude : Double
+}
+
+entity Comment {
+    * id : Integer
+    * content : String
+    * createdDate : LocalDateTime
+    * modifiedDate : LocalDateTime
+}
+
+User ||-right-o{ Track : "owns"
+User ||--o{ Comment : "writes"
+Track ||-right-|| TrackMap : "has"
+Track ||--o{ Comment : "has"
+TrackMap ||--o{ Coordinate : "contains"
+TrackMap ||--o{ Marker : "contains"
+Coordinate --o{ TrackMap : "belongs to"
+Marker --o{ TrackMap : "belongs to"
+Comment --|| User : "is authored by"
+Comment --|| Track : "belongs to"
+
+@enduml

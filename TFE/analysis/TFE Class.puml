@@ -1,0 +1,124 @@
+@startuml
+
+' Enum classes
+enum UserRole {
+    ADMIN
+    USER
+}
+
+enum UserGender {
+    MALE
+    FEMALE
+}
+
+' Main User class
+class User {
+   - Integer id
+   - String name
+   - String email
+   - String password
+   - LocalDate birthDay
+   - UserRole role
+   - UserGender gender
+   - Double height
+   - Double weight
+   - Boolean locked
+   - Boolean enable
+   - Integer getAge()
+   + Collection<GrantedAuthority> getAuthorities()
+   + String getPassword()
+   + String getUsername()
+   + Boolean isAccountNonExpired()
+   + Boolean isAccountNonLocked()
+   + Boolean isCredentialsNonExpired()
+   + Boolean isEnabled()
+   + Integer hashCode()
+   + Boolean equals(Object o)
+}
+
+' Track class
+class Track {
+   - Integer id
+   - LocalDateTime date
+   - LocalTime totalTime
+   - Double distance
+   - Double calories
+   - Double averageSpeed
+   - Double maxSpeed
+   - LocalTime pauseTime
+   - LocalTime activeTime
+   - LocalTime startTime
+   - LocalTime finishTime
+   - Double maxAltitude
+   - Double minAltitude
+   - Double startAltitude
+   - Double finishAltitude
+   - Boolean shared
+   - String bikeType
+   - String routeType
+   - String location
+   - String comment
+   + Integer hashCode()
+   + Boolean equals(Object o)
+}
+
+' TrackMap class
+class TrackMap {
+  - Integer id
+  - Set<Coordinate> polyCoordinates
+  - Set<Marker> markers
+}
+
+' Coordinate class
+class Coordinate {
+   - Integer id
+   - Double latitude
+   - Double longitude
+   - Long timestamp
+   - TrackMap trackMap
+}
+
+' Marker class
+class Marker {
+   - Integer id
+   - String key
+   - String name
+   - String comment
+   - Double latitude
+   - Double longitude
+   - TrackMap trackMap
+}
+
+' New Comment class
+class Comment {
+   - Integer id
+   - String content
+   - LocalDateTime createdDate
+   - LocalDateTime modifiedDate
+   - User author
+   - Track track
+   + void editContent(String newContent)
+   + Boolean isAuthor(User user)
+   + Integer hashCode()
+   + Boolean equals(Object o)
+}
+
+' Relationships
+User -right-> "0..*" Track : owns >
+Track --* "1" User : owner
+Track "1" *-- "1" TrackMap : belongs to <
+TrackMap --> "0..*" Coordinate : has >
+TrackMap --> "0..*" Marker : has >
+Coordinate --* "1" TrackMap : belongs to >
+Marker --* "1" TrackMap : belongs to >
+
+' New relationships for comments
+Track "1" --> "0..*" Comment : has >
+User "1" --> "0..*" Comment : writes >
+Comment "1" --* "1" User : written by >
+Comment "1" --* "1" Track : belongs to >
+
+UserRole "1" --> "1..*" User : defines role for >
+UserGender "1" --> "1..*" User : defines gender for >
+
+@enduml
