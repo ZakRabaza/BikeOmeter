@@ -4,6 +4,40 @@ This is a sport tracking app for Android. A companion React Native mobile client
 
 ---
 
+# Screen shots
+
+<img width="250" height="555" alt="home" src="https://github.com/user-attachments/assets/d5bc4154-b346-4c43-bfc2-765062785b46" />
+<img width="250" height="555" alt="register" src="https://github.com/user-attachments/assets/4f8167a9-5cef-4c47-b0e4-840484a8dd55" />
+<img width="250" height="555" alt="login" src="https://github.com/user-attachments/assets/8fb13910-503a-4f8c-9b9f-3330ac3c3c71" />
+
+
+<img width="250" height="555" alt="statistics" src="https://github.com/user-attachments/assets/183e00d1-9db9-4a38-9b33-83507a15b6e9" />
+<img width="250" height="555" alt="date_picker" src="https://github.com/user-attachments/assets/1faea6f3-2240-4ce9-b75d-122d515ff1aa" />
+
+<img width="250" height="555" alt="history" src="https://github.com/user-attachments/assets/eff45644-41bb-4435-9712-cc6156302144" />
+<img width="250" height="555" alt="history_details" src="https://github.com/user-attachments/assets/27a482e8-cdc9-437c-b2ae-e234dee67156" />
+<img width="250" height="555" alt="history_marker_edit" src="https://github.com/user-attachments/assets/68e12438-aa35-4610-9480-5f2191489cdf" />
+<img width="250" height="555" alt="history_delete" src="https://github.com/user-attachments/assets/1f3481e6-48b6-4260-9949-4705ee967547" />
+
+<img width="250" height="555" alt="display" src="https://github.com/user-attachments/assets/2e67ec79-f315-4948-9929-43366ff8d75b" />
+<img width="250" height="555" alt="activity_pause" src="https://github.com/user-attachments/assets/7f977ba6-0ff7-4fea-991d-5ae0a1684f90" />
+<img width="250" height="555" alt="activity_resume" src="https://github.com/user-attachments/assets/e7022fd3-40db-4b3d-9173-274697c56f68" />
+<img width="250" height="555" alt="live_stats" src="https://github.com/user-attachments/assets/d3106238-1456-42c5-b911-ca3914218113" />
+<img width="250" height="555" alt="map" src="https://github.com/user-attachments/assets/28eca29f-c2e1-4bc6-b0af-0996176aa4d9" />
+
+<img width="250" height="555" alt="share" src="https://github.com/user-attachments/assets/45191203-bd52-4ba3-bd49-41218ff650ef" />
+<img width="250" height="555" alt="share_add" src="https://github.com/user-attachments/assets/7911fe5a-e1f3-4375-99f2-ff5f5d9304a3" />
+<img width="250" height="555" alt="shared" src="https://github.com/user-attachments/assets/0f8380b3-8d24-42dc-93df-54ebe2fd0cfe" />
+<img width="250" height="555" alt="shared_details" src="https://github.com/user-attachments/assets/961d7cab-e763-4a2f-82b7-851c8cf9da90" />
+<img width="250" height="555" alt="comment_owner" src="https://github.com/user-attachments/assets/4e920039-3587-4bc7-b1bc-8ab353f197ad" />
+<img width="250" height="555" alt="browse" src="https://github.com/user-attachments/assets/9fe77ffd-24e1-4a59-9286-b265ea970b5d" />
+<img width="250" height="555" alt="browse_filter" src="https://github.com/user-attachments/assets/42495db0-1566-4d01-ad76-2b15030813a3" />
+<img width="250" height="555" alt="comment_not_owner" src="https://github.com/user-attachments/assets/a7b4d04e-d2a7-432e-af4f-b25fb4f15e82" />
+
+<img width="250" height="555" alt="account" src="https://github.com/user-attachments/assets/78aaa633-f06b-4047-8f97-7e7e3843649c" />
+<img width="250" height="555" alt="account_height" src="https://github.com/user-attachments/assets/6a73ac61-c82b-47e7-84d5-4a8e1acb3780" />
+<img width="250" height="555" alt="acccount_date" src="https://github.com/user-attachments/assets/b21c7e63-2ca6-423d-813d-d46ad2f3bd15" />
+
 # Backend
 
 ## Tech stack
@@ -551,40 +585,6 @@ Recording is handled by `components/location/AppLocation.js`, which renders the 
 - **No tests.** No test suite is present.
 
 The project dates from 2024 and has not been updated since.
-
-# Screen shots
-
-<img width="250" height="555" alt="home" src="https://github.com/user-attachments/assets/d5bc4154-b346-4c43-bfc2-765062785b46" />
-<img width="250" height="555" alt="register" src="https://github.com/user-attachments/assets/4f8167a9-5cef-4c47-b0e4-840484a8dd55" />
-<img width="250" height="555" alt="login" src="https://github.com/user-attachments/assets/8fb13910-503a-4f8c-9b9f-3330ac3c3c71" />
-
-
-<img width="250" height="555" alt="statistics" src="https://github.com/user-attachments/assets/183e00d1-9db9-4a38-9b33-83507a15b6e9" />
-<img width="250" height="555" alt="date_picker" src="https://github.com/user-attachments/assets/1faea6f3-2240-4ce9-b75d-122d515ff1aa" />
-
-<img width="250" height="555" alt="history" src="https://github.com/user-attachments/assets/eff45644-41bb-4435-9712-cc6156302144" />
-<img width="250" height="555" alt="history_details" src="https://github.com/user-attachments/assets/27a482e8-cdc9-437c-b2ae-e234dee67156" />
-<img width="250" height="555" alt="history_marker_edit" src="https://github.com/user-attachments/assets/68e12438-aa35-4610-9480-5f2191489cdf" />
-<img width="250" height="555" alt="history_delete" src="https://github.com/user-attachments/assets/1f3481e6-48b6-4260-9949-4705ee967547" />
-
-<img width="250" height="555" alt="display" src="https://github.com/user-attachments/assets/2e67ec79-f315-4948-9929-43366ff8d75b" />
-<img width="250" height="555" alt="activity_pause" src="https://github.com/user-attachments/assets/7f977ba6-0ff7-4fea-991d-5ae0a1684f90" />
-<img width="250" height="555" alt="activity_resume" src="https://github.com/user-attachments/assets/e7022fd3-40db-4b3d-9173-274697c56f68" />
-<img width="250" height="555" alt="live_stats" src="https://github.com/user-attachments/assets/d3106238-1456-42c5-b911-ca3914218113" />
-<img width="250" height="555" alt="map" src="https://github.com/user-attachments/assets/28eca29f-c2e1-4bc6-b0af-0996176aa4d9" />
-
-<img width="250" height="555" alt="share" src="https://github.com/user-attachments/assets/45191203-bd52-4ba3-bd49-41218ff650ef" />
-<img width="250" height="555" alt="share_add" src="https://github.com/user-attachments/assets/7911fe5a-e1f3-4375-99f2-ff5f5d9304a3" />
-<img width="250" height="555" alt="shared" src="https://github.com/user-attachments/assets/0f8380b3-8d24-42dc-93df-54ebe2fd0cfe" />
-<img width="250" height="555" alt="shared_details" src="https://github.com/user-attachments/assets/961d7cab-e763-4a2f-82b7-851c8cf9da90" />
-<img width="250" height="555" alt="comment_owner" src="https://github.com/user-attachments/assets/4e920039-3587-4bc7-b1bc-8ab353f197ad" />
-<img width="250" height="555" alt="browse" src="https://github.com/user-attachments/assets/9fe77ffd-24e1-4a59-9286-b265ea970b5d" />
-<img width="250" height="555" alt="browse_filter" src="https://github.com/user-attachments/assets/42495db0-1566-4d01-ad76-2b15030813a3" />
-<img width="250" height="555" alt="comment_not_owner" src="https://github.com/user-attachments/assets/a7b4d04e-d2a7-432e-af4f-b25fb4f15e82" />
-
-<img width="250" height="555" alt="account" src="https://github.com/user-attachments/assets/78aaa633-f06b-4047-8f97-7e7e3843649c" />
-<img width="250" height="555" alt="account_height" src="https://github.com/user-attachments/assets/6a73ac61-c82b-47e7-84d5-4a8e1acb3780" />
-<img width="250" height="555" alt="acccount_date" src="https://github.com/user-attachments/assets/b21c7e63-2ca6-423d-813d-d46ad2f3bd15" />
 
 
 # License
